@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Olaf ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#0f0f0f;
+color:white;
+overflow-x:hidden;
+scroll-behavior:smooth;
+}
+
+section{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding:40px;
+text-align:center;
+}
+
+.hero{
+background:
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+url('rollercoaster.jpg');
+background-size:cover;
+background-position:center;
+}
+
+h1{
+font-size:4rem;
+font-family:'Dancing Script',cursive;
+margin-bottom:20px;
+}
+
+h2{
+font-size:2.5rem;
+margin-bottom:25px;
+color:#ffd1dc;
+}
+
+p{
+max-width:850px;
+line-height:1.9;
+font-size:1.15rem;
+}
+
+.heart{
+position:fixed;
+top:-10px;
+font-size:20px;
+animation:fall linear infinite;
+opacity:.7;
+pointer-events:none;
+}
+
+@keyframes fall{
+to{
+transform:translateY(110vh);
+}
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
+width:100%;
+max-width:1200px;
+}
+
+.gallery img{
+width:100%;
+height:400px;
+object-fit:cover;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(255,255,255,.15);
+transition:.3s;
+}
+
+.gallery img:hover{
+transform:scale(1.03);
+}
+
+.memory{
+background:#171717;
+}
+
+.promise{
+background:#121212;
+}
+
+.final{
+background:linear-gradient(135deg,#ff5e8a,#a855f7);
+}
+
+button{
+padding:18px 35px;
+border:none;
+border-radius:50px;
+font-size:1.1rem;
+margin-top:30px;
+cursor:pointer;
+background:white;
+color:#ff4f81;
+font-weight:700;
+}
+
+.hidden{
+display:none;
+}
+
+#message{
+margin-top:30px;
+font-size:1.5rem;
+font-weight:600;
+}
+
+.music{
+position:fixed;
+top:20px;
+right:20px;
+z-index:999;
+}
+
+.music button{
+padding:10px 18px;
+font-size:.9rem;
+}
+</style>
+</head>
+
+<body>
+
+<div class="music">
+<button onclick="toggleMusic()">🎵 Music</button>
+</div>
+
+<audio id="bgMusic" loop>
+<source src="enchanted.mp3" type="audio/mpeg">
+</audio>
+
+<section class="hero">
+<h1>Dear Olaf ❤️</h1>
+
+<p>
+This isn't just a website.
+<br><br>
+It's a small piece of my heart that I hope reaches yours.
+</p>
+</section>
+
+<section>
+<h2>I'm Sorry</h2>
+
+<p>
+Olaf,
+<br><br>
+I'm sorry.
+<br><br>
+Not because I have to say it,
+but because I genuinely mean it.
+<br><br>
+You deserve patience, understanding and kindness from me.
+I know there were moments when I fell short.
+<br><br>
+I can't undo what happened,
+but I can acknowledge it,
+learn from it,
+and do better.
+</p>
+</section>
+
+<section class="memory">
+<h2>My Favourite Memory ❤️</h2>
+
+<p>
+Our first hug after our first date.
+<br><br>
+Everything became quiet for a moment.
+<br><br>
+It felt like my soul left my body and found its place with you.
+<br><br>
+That memory lives in my heart every day.
+</p>
+</section>
+
+<section>
+<h2>Our Memories</h2>
+
+<div class="gallery">
+
+<img src="rollercoaster.jpg">
+<img src="sumit1.jpg">
+<img src="sumit2.jpg">
+<img src="sumit3.jpg">
+<img src="olaf1.jpg">
+<img src="olaf2.jpg">
+<img src="olaf3.jpg">
+<img src="olaf4.jpg">
+
+</div>
+</section>
+
+<section class="promise">
+
+<h2>What You Mean To Me</h2>
+
+<p>
+Your smile makes difficult days easier.
+<br><br>
+Your presence brings peace.
+<br><br>
+The little moments we've shared became some of my favourite memories.
+<br><br>
+And despite my mistakes,
+my feelings for you have never changed.
+</p>
+
+</section>
+
+<section>
+
+<h2>If I Could Go Back...</h2>
+
+<p>
+I'd choose my words more carefully.
+<br><br>
+I'd listen more.
+<br><br>
+I'd understand better.
+<br><br>
+I'd love you more intentionally.
+<br><br>
+I cannot change the past,
+but I can become better because of it.
+</p>
+
+</section>
+
+<section class="final">
+
+<h2>Olaf ❤️</h2>
+
+<p>
+I don't expect this page to fix everything.
+<br><br>
+I only hope it shows how much I care
+and how sincerely sorry I am.
+<br><br>
+Thank you for every smile,
+every conversation,
+every memory,
+and every moment we've shared.
+<br><br>
+Always,
+<br><br>
+<b>Sumit ❤️</b>
+</p>
+
+<button onclick="forgive()">
+Can We Talk?
+</button>
+
+<div id="message"></div>
+
+</section>
+
+<script>
+
+function createHeart(){
+const heart=document.createElement('div');
+heart.classList.add('heart');
+heart.innerHTML='❤️';
+
+heart.style.left=Math.random()*100+'vw';
+heart.style.animationDuration=(Math.random()*5+5)+'s';
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},10000);
+}
+
+setInterval(createHeart,300);
+
+function forgive(){
+document.getElementById('message').innerHTML=
+"❤️ That's all I'm hoping for. ❤️";
+}
+
+function toggleMusic(){
+const music=document.getElementById('bgMusic');
+
+if(music.paused){
+music.play();
+}else{
+music.pause();
+}
+}
+
+</script>
+
+</body>
+</html>
